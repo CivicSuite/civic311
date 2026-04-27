@@ -1,0 +1,39 @@
+Civic311 User Manual
+====================
+
+For non-technical users
+-----------------------
+
+Civic311 helps city staff organize resident service requests before they become official work orders. It can create a sample intake stub, suggest a triage bucket, surface duplicate candidates, prepare routing steps, and assemble an Open311-compatible export checklist.
+
+Current state: 0.1.0 resident service request foundation release. Civic311 does not dispatch crews, create official work orders, handle emergencies, provide legal advice, call live LLMs, write back to 311/work-order systems, or update a 311 system of record. Staff own every decision.
+
+For IT and technical staff
+--------------------------
+
+Civic311 is a FastAPI Python package pinned to civiccore==0.2.0. The current runtime exposes:
+
+- GET /
+- GET /health
+- GET /civic311
+- POST /api/v1/civic311/intake
+- POST /api/v1/civic311/triage
+- POST /api/v1/civic311/deduplicate
+- POST /api/v1/civic311/routing
+- POST /api/v1/civic311/open311-export
+
+Run:
+
+python -m pip install -e ".[dev]"
+python -m pytest -q
+bash scripts/verify-release.sh
+
+Architecture
+------------
+
+Resident -> Civic311 -> CivicCore v0.2.0
+311 coordinator / department staff -> Civic311
+Civic311 future handoffs -> CivicAccess, CivicCode
+Civic311 -> Open311-compatible export checklist
+
+Civic311 depends on CivicCore. CivicCore does not depend on Civic311. Civic311 v0.1.0 uses deterministic sample request data only; live 311 systems, official dispatch, work-order creation, emergency response, legal advice, live LLM calls, and production 311-system integrations are future work.
