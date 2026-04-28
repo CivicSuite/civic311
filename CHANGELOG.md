@@ -4,6 +4,13 @@ All notable changes to Civic311 will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [0.1.1] - 2026-04-28
+
+### Changed
+
+- Dependency-alignment release: moved Civic311 to `civiccore==0.3.0` while preserving the existing service request intake, triage, duplicate-candidate review, routing, Open311-compatible export, and public UI foundation.
+- Updated CI, verification gates, package metadata, docs, runtime tests, landing page, and public UI labels for the v0.1.1 release.
+
 ## [0.1.0] - 2026-04-27
 
 ### Added

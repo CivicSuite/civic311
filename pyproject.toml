@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "civic311"
-version = "0.1.0"
+version = "0.1.1"
 description = "Civic311 runtime foundation for resident service request intake, triage, deduplication, routing, and Open311-compatible export support."
 readme = "README.md"
 requires-python = ">=3.11"
@@ -13,7 +13,7 @@ authors = [
   { name = "CivicSuite contributors" }
 ]
 dependencies = [
-  "civiccore==0.2.0",
+  "civiccore==0.3.0",
   "fastapi>=0.115.0,<1.0.0",
   "uvicorn[standard]>=0.30.0,<1.0.0",
 ]

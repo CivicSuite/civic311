@@ -1,4 +1,4 @@
-"""Resident request triage helpers for Civic311 v0.1.0."""
+"""Resident request triage helpers for Civic311 v0.1.1."""
 
 from __future__ import annotations
 
