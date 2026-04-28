@@ -2,7 +2,7 @@
 
 Civic311 is the CivicSuite module for resident service request intake, deterministic triage, duplicate-candidate review, department routing, and Open311-compatible export support.
 
-Current state: **v0.1.0 resident service request foundation release**. This repo ships a FastAPI package, health/root endpoints, documentation gates, deterministic sample request intake, triage suggestions, duplicate-candidate checks, routing checklists, Open311-compatible export helper, and accessible public sample UI at `/civic311`. It does **not** ship official dispatch, work-order creation, emergency response, legal advice, live LLM calls, 311 system write-back, or 311 system-of-record integrations.
+Current state: **v0.1.1 resident service request foundation release**, aligned to `civiccore==0.3.0`. This repo ships a FastAPI package, health/root endpoints, documentation gates, deterministic sample request intake, triage suggestions, duplicate-candidate checks, routing checklists, Open311-compatible export helper, and accessible public sample UI at `/civic311`. It does **not** ship official dispatch, work-order creation, emergency response, legal advice, live LLM calls, 311 system write-back, or 311 system-of-record integrations.
 
 ## What Civic311 Does
 
@@ -18,7 +18,7 @@ Current state: **v0.1.0 resident service request foundation release**. This repo
 - It does not dispatch crews or create official work orders.
 - It does not handle emergencies.
 - It does not provide legal advice.
-- It does not call live LLMs in v0.1.0.
+- It does not call live LLMs in v0.1.1.
 - It does not write back to 311 or work-order systems.
 - It does not replace a 311 system of record.
 

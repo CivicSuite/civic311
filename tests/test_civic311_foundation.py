@@ -104,6 +104,6 @@ def test_public_ui_route_is_accessible_and_honest() -> None:
     text = response.text
     assert '<a class="skip-link" href="#main">Skip to main content</a>' in text
     assert '<main id="main" tabindex="-1">' in text
-    assert "v0.1.0 resident service request foundation" in text
+    assert "v0.1.1 resident service request foundation" in text
     assert "does not create official work orders" in text
     assert "replace the system of record" in text
