@@ -89,6 +89,7 @@ def test_civic311_support_apis_success_shape() -> None:
     assert intake.json()["request_id"] == "sr-001"
     assert triage.status_code == 200
     assert triage.json()["suggested_department"] == "Public Works"
+    assert "request_id" not in triage.json()
     assert duplicates.status_code == 200
     assert duplicates.json()["possible_duplicate"] is True
     assert routing.status_code == 200

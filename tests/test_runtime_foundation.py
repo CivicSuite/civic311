@@ -16,7 +16,8 @@ def test_root_endpoint_states_runtime_boundary() -> None:
     assert response.status_code == 200
     data = response.json()
     assert data["name"] == "Civic311"
-    assert data["status"] == "resident service request foundation"
+    assert data["status"] == "resident service request foundation plus request persistence"
+    assert "database-backed service request and triage review records" in data["message"]
     assert "official dispatch" in data["message"]
     assert "Post-v0.1.1 roadmap" in data["next_step"]
 
