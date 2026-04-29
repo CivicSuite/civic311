@@ -6,6 +6,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [0.1.1] - 2026-04-28
 
+### Added
+
+- Optional SQLAlchemy-backed service request and triage review records via `CIVIC311_REQUEST_DB_URL`.
+- Service request and triage review retrieval endpoints for persisted records.
+
 ### Changed
 
 - Dependency-alignment release: moved Civic311 to `civiccore==0.3.0` while preserving the existing service request intake, triage, duplicate-candidate review, routing, Open311-compatible export, and public UI foundation.

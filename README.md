@@ -2,12 +2,13 @@
 
 Civic311 is the CivicSuite module for resident service request intake, deterministic triage, duplicate-candidate review, department routing, and Open311-compatible export support.
 
-Current state: **v0.1.1 resident service request foundation release**, aligned to `civiccore==0.3.0`. This repo ships a FastAPI package, health/root endpoints, documentation gates, deterministic sample request intake, triage suggestions, duplicate-candidate checks, routing checklists, Open311-compatible export helper, and accessible public sample UI at `/civic311`. It does **not** ship official dispatch, work-order creation, emergency response, legal advice, live LLM calls, 311 system write-back, or 311 system-of-record integrations.
+Current state: **v0.1.1 resident service request foundation plus request persistence release**, aligned to `civiccore==0.3.0`. This repo ships a FastAPI package, health/root endpoints, documentation gates, deterministic sample request intake, triage suggestions, optional database-backed service request and triage review records, duplicate-candidate checks, routing checklists, Open311-compatible export helper, and accessible public sample UI at `/civic311`. It does **not** ship official dispatch, work-order creation, emergency response, legal advice, live LLM calls, 311 system write-back, or 311 system-of-record integrations.
 
 ## What Civic311 Does
 
 - Create sample resident service request intake stubs.
 - Suggest deterministic triage buckets for staff review.
+- Persist service request and triage review records when `CIVIC311_REQUEST_DB_URL` is configured.
 - Flag possible duplicates without merging requests.
 - Build department routing and resident-update checklists.
 - Produce Open311-compatible export checklists.
@@ -28,10 +29,16 @@ Current state: **v0.1.1 resident service request foundation release**, aligned t
 - `GET /health` returns package and CivicCore versions.
 - `GET /civic311` returns the accessible public sample UI.
 - `POST /api/v1/civic311/intake` returns a sample request intake stub.
+- `GET /api/v1/civic311/intake/{request_id}` retrieves a persisted service request when `CIVIC311_REQUEST_DB_URL` is configured.
 - `POST /api/v1/civic311/triage` returns deterministic triage suggestions.
+- `GET /api/v1/civic311/triage/{request_id}` retrieves a persisted triage review when `CIVIC311_REQUEST_DB_URL` is configured.
 - `POST /api/v1/civic311/deduplicate` returns duplicate-candidate review notes.
 - `POST /api/v1/civic311/routing` returns department-routing checklists.
 - `POST /api/v1/civic311/open311-export` returns an Open311-compatible export checklist.
+
+## Optional Persistence
+
+Set `CIVIC311_REQUEST_DB_URL` to enable local SQLAlchemy-backed service request and triage review records.
 
 ## Local Development
 
